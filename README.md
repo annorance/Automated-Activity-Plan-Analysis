@@ -119,14 +119,15 @@ Berikut alur kerja yang direkonstruksi dari file JSON:
 
 ## 🏗️ **Technical Stack**
 
-| Komponen              | Teknologi                  |
-| --------------------- | -------------------------- |
-| Workflow Orchestrator | **n8n**                    |
-| Data Source           | **Google Sheets API**      |
-| Transformation Logic  | JavaScript (n8n Code Node) |
-| Chart Rendering       | **QuickChart.io**          |
-| Report Format         | HTML (inline CSS)          |
-| Delivery              | Gmail Node (OAuth2)        |
+| Komponen                          | Teknologi                  |
+| --------------------------------- | -------------------------- |
+| Workflow Orchestrator             | **n8n**                    |
+| Data Source                       | **Google Sheets API**      |
+| Transformation Logic              | JavaScript (n8n Code Node) |
+| AI Text Analysis                  | **ChatGPT API Node**       |
+| Chart Rendering                   | **QuickChart.io**          |
+| Report Format                     | HTML (inline CSS)          |
+| Delivery                          | Gmail Node (OAuth2)        |
 
 ---
 
