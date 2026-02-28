@@ -124,7 +124,7 @@ Berikut alur kerja yang direkonstruksi dari file JSON:
 | Workflow Orchestrator             | **n8n**                    |
 | Data Source                       | **Google Sheets API**      |
 | Transformation Logic              | JavaScript (n8n Code Node) |
-| AI Text Analysis                  | **ChatGPT API Node**       |
+| AI Text Analysis                  | **ChatGPT API**       |
 | Chart Rendering                   | **QuickChart.io**          |
 | Report Format                     | HTML (inline CSS)          |
 | Delivery                          | Gmail Node (OAuth2)        |
