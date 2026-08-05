@@ -145,6 +145,9 @@ Workflow menghasilkan otomatis:
 * hubungan kolaborasi antar departemen,
 * kebutuhan support lintas departemen,
 * distribusi alokasi budget CAPEX vs Dept vs Not Use Budget.
+* deteksi otomatis aktivitas yang duplikat antardepartemen
+* klasifikasi QCDSME otomatis dari setiap activity plan
+* breakdown aktivitas berdasarkan bobot dan kategori serta jumlah bobot per bulan yang kemudian dituliskan laporan bulan tersibuk dan bulan yang paling tidak sibuk
 
 Semua diagram dan tabel langsung dikirim via email tanpa editing manual.
 
