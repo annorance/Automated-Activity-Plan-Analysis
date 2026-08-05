@@ -22,9 +22,9 @@ Melalui workflow **n8n**, seluruh langkah tersebut sekarang berlangsung **otomat
 
 ### 1. **Multi-Sheet Data Aggregation**
 
-Workflow menarik data dari berbagai Activity Plan draft per departemen:
+* Workflow menarik data dari berbagai Activity Plan draft per departemen
 
-  Setiap file diambil menggunakan **Google Sheets node** dan disatukan melalui node **Merge**.
+* Setiap file diambil menggunakan **Google Sheets node** dan disatukan melalui node **Merge**.
 
 ### 2. **Automatic Data Cleaning & Normalization**
 
