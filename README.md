@@ -1,10 +1,10 @@
-# 📘 **Automated Activity Plan Analysis**
+# 📘 **Automated Annual Activity Plan Analysis**
 
 *Transforming manual spreadsheet processing into a fully automated multi-department analytical pipeline*
 
 ## 🚀 Overview
 
-Proyek **Automated Activity Plan Analysis** dibangun untuk menggantikan proses manual dalam menggabungkan, membersihkan, menganalisis, dan melaporkan *Activity Plan* lintas departemen (PRD, ENG, BDA, WH, QA, IOS, HCD, MDP, dll).
+Proyek **Automated Annual Activity Plan Analysis** dibangun untuk menggantikan proses manual dalam menggabungkan, membersihkan, menganalisis, dan melaporkan *Annual Activity Plan* lintas departemen
 
 Sebelumnya, tim harus:
 
@@ -24,7 +24,6 @@ Melalui workflow **n8n**, seluruh langkah tersebut sekarang berlangsung **otomat
 
 Workflow menarik data dari berbagai Activity Plan draft per departemen:
 
-* PRD, ENG, BDA, QA/QAC, WH, IOS, HCD, MDP, dll.
   Setiap file diambil menggunakan **Google Sheets node** dan disatukan melalui node **Merge**.
 
 ### 2. **Automatic Data Cleaning & Normalization**
