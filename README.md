@@ -66,7 +66,7 @@ Workflow secara otomatis membangun:
 * Bar charts (Activities & Initiatives per DIC),
 * Support contribution distribution charts.
 
-Semua chart dibuat secara dinamis melalui QuickChart dengan konfigurasi otomatis termasuk label, warna departemen, datalabels plugin, dan scaling.
+Semua chart dibuat secara dinamis melalui **QuickChart** dengan konfigurasi otomatis termasuk label, warna departemen, datalabels plugin, dan scaling.
 
 ### 6. **HTML Report Composer**
 
