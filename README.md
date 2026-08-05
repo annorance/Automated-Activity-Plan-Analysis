@@ -14,7 +14,7 @@ Sebelumnya, tim harus:
 * membuat chart satu per satu,
 * menyusun laporan secara manual.
 
-Melalui workflow **n8n**, seluruh langkah tersebut sekarang berlangsung **otomatis 100%** hanya dengan satu klik (“Execute Workflow”).
+Melalui workflow **n8n** dengan memanfaatkan berbagai node seperti OpenAI, JavaScript, dan QuickChart, seluruh langkah tersebut sekarang berlangsung **otomatis 100%** hanya dengan satu klik (“Execute Workflow”).
 
 ---
 
@@ -41,17 +41,22 @@ Seluruh activity lintas departemen disatukan ke dalam satu master sheet:
 
 ### 4. **Analytical Modules (Multiple Code Nodes)**
 
-Pipeline menghasilkan berbagai analisis, antara lain:
+Pipeline menghasilkan berbagai analisis otomatis, antara lain:
 
-* **Activities per DIC**
-* **Initiatives per DIC**
+* **Activities and Initiatives per DIC**
 * **Focus Theme per DIC**
 * **KMI & KSI and Dimension Mapping**
 * **Collaboration Culture Mapping**
 * **Support Contribution Analysis**
 * **Budget Resource Distribution** (CAPEX / Department / Not Use Budget)
+* **Duplicated Activities Detection**
+* **Automated QCDSME Classification**
+* **Activity Breakdown by Weight & Category**
+* **Activity Count by Weight per Month & Automated Busyness per Month Detection**
 
-Setiap analisis dihitung melalui custom JavaScript di dalam node **Code**, menggunakan logic agregasi, grouping, dan counting yang kompleks.
+How does it work?
+* Setiap analisis dihitung melalui custom JavaScript di dalam node **Code**, menggunakan logic agregasi, grouping, dan counting yang kompleks.
+* Analisis pada data yang memuat **big data dalam bentuk teks** seperti analisis aktivitas yang duplikat antardepartemen dan klasifikasi QCDSME dilakukan menggunakan **model ChatGPT** melalui **node OpenAI** 
 
 ### 5. **Automatic Chart Generation (QuickChart API)**
 
