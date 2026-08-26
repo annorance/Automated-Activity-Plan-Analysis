@@ -14,8 +14,14 @@ Previously, the team had to:
 * build charts one by one,
 * compile reports manually.
 
-Through an **n8n** workflow leveraging various nodes such as OpenAI, JavaScript, and QuickChart, the entire process now runs **100% automatically** with just a single click ("Execute Workflow").
+Through an **n8n** workflow leveraging various nodes such as OpenAI, JavaScript, and QuickChart, the entire process now runs **100% automatically** with just a single click ("Execute Workflow")--reducing a process that previously took over **8 hours to just 3–5 minutes**, with zero manual editing required.
 
+## 🛠️ My Role
+I independently developed an end-to-end automation pipeline using n8n to replace a manual, multi-department Activity Plan reporting process. This included:
+- Preprocessing and cleaning raw data across departments (merging sheets, removing blank rows/columns, correcting errors).
+- Building the core workflow with AI integration (OpenAI/ChatGPT) for text-based analysis.
+- Developing custom analytics logic for key insights such as busiest/least busy month detection, budget resource distribution, and activity breakdown by weight and category.
+- Implemented automated data visualization using the QuickChart API, and built an automated HTML reporting system with Gmail-based delivery
 ---
 
 ## 🎯 **Key Features**
@@ -176,7 +182,7 @@ No more manual merging, chart editing, or copy-pasting.
 
 ---
 
-## 🧱 Folder Structure (Recommended)
+## 🧱 Folder Structure 
 
 ```
 /project-root
@@ -189,6 +195,12 @@ No more manual merging, chart editing, or copy-pasting.
   └── charts/
        └── examples.png
 ```
+
+---
+
+## 🗓️ **Development period**
+
+**Development Period:** November 13 – December 3, 2025
 
 ---
 
