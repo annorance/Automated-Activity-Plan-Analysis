@@ -6,19 +6,11 @@
 
 The **Automated Annual Activity Plan Analysis** project was built to replace the manual process of merging, cleaning, analyzing, and reporting the *Annual Activity Plan* across departments.
 
-Previously, the team had to:
-
-* open multiple Google Sheets files,
-* merge data manually,
-* calculate totals for activities, initiatives, and KMI/KSI categories,
-* build charts one by one,
-* compile reports manually.
-
-Through an **n8n** workflow leveraging various nodes such as OpenAI, JavaScript, and QuickChart, the entire process now runs **100% automatically** with just a single click ("Execute Workflow")--reducing a process that previously took over **8 hours to just 3–5 minutes**, with zero manual editing required.
+Previously, the team had to open multiple Google Sheets files, merge data manually, calculate totals for activities, initiatives, and KMI/KSI categories, build charts one by one, and compile reports manually. Through an **n8n** workflow leveraging various nodes such as OpenAI, JavaScript, and QuickChart, the entire process now runs **100% automatically** with just a single click ("Execute Workflow")--reducing a process that previously took over **8 hours to just 3–5 minutes**, with zero manual editing required.
 
 ## 🛠️ My Role
 I independently developed an end-to-end automation pipeline using n8n to replace a manual, multi-department Activity Plan reporting process. This included:
-- Preprocessing and cleaning raw data across departments (merging sheets, removing blank rows/columns, correcting errors).
+- Preprocessing and cleaning raw data across departments (removing blank rows/columns and correcting minor errors such as typos in department names).
 - Building the core workflow with AI integration (OpenAI/ChatGPT) for text-based analysis.
 - Developing custom analytics logic for key insights such as busiest/least busy month detection, budget resource distribution, and activity breakdown by weight and category.
 - Implemented automated data visualization using the QuickChart API, and built an automated HTML reporting system with Gmail-based delivery
