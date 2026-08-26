@@ -4,17 +4,17 @@
 
 ## 🚀 Overview
 
-Proyek **Automated Annual Activity Plan Analysis** dibangun untuk menggantikan proses manual dalam menggabungkan, membersihkan, menganalisis, dan melaporkan *Annual Activity Plan* lintas departemen
+The **Automated Annual Activity Plan Analysis** project was built to replace the manual process of merging, cleaning, analyzing, and reporting the *Annual Activity Plan* across departments.
 
-Sebelumnya, tim harus:
+Previously, the team had to:
 
-* membuka banyak file Google Sheets,
-* menggabungkan data secara manual,
-* menghitung total activity, initiative, kategori KMI/KSI,
-* membuat chart satu per satu,
-* menyusun laporan secara manual.
+* open multiple Google Sheets files,
+* merge data manually,
+* calculate totals for activities, initiatives, and KMI/KSI categories,
+* build charts one by one,
+* compile reports manually.
 
-Melalui workflow **n8n** dengan memanfaatkan berbagai node seperti OpenAI, JavaScript, dan QuickChart, seluruh langkah tersebut sekarang berlangsung **otomatis 100%** hanya dengan satu klik (“Execute Workflow”).
+Through an **n8n** workflow leveraging various nodes such as OpenAI, JavaScript, and QuickChart, the entire process now runs **100% automatically** with just a single click ("Execute Workflow").
 
 ---
 
@@ -22,26 +22,26 @@ Melalui workflow **n8n** dengan memanfaatkan berbagai node seperti OpenAI, JavaS
 
 ### 1. **Multi-Sheet Data Aggregation**
 
-* Workflow menarik data dari berbagai Activity Plan draft per departemen
+* The workflow pulls data from various Activity Plan drafts across departments
 
-* Setiap file diambil menggunakan **Google Sheets node** dan disatukan melalui node **Merge**.
+* Each file is retrieved using a **Google Sheets node** and combined through a **Merge** node.
 
 ### 2. **Automatic Data Cleaning & Normalization**
 
-Pipeline melakukan:
+The pipeline performs:
 
-* pembersihan sheet target sebelum menulis ulang,
-* normalisasi kolom (misal mapping DIC/QAC/WHS/HCD),
-* penomoran ulang kandidat activity (`Node 2: Number Formatting`).
+* cleaning of the target sheet before rewriting,
+* column normalization (e.g., mapping DIC/QAC/WHS/HCD),
+* re-numbering of activity candidates (`Node 2: Number Formatting`).
 
 ### 3. **Automated Master Sheet Generation**
 
-Seluruh activity lintas departemen disatukan ke dalam satu master sheet:
+All activities across departments are consolidated into a single master sheet:
 `Node A: Append row in Merged Sheet`.
 
 ### 4. **Analytical Modules (Multiple Code Nodes)**
 
-Pipeline menghasilkan berbagai analisis otomatis, antara lain:
+The pipeline generates various automated analyses, including:
 
 * **Activities and Initiatives per DIC**
 * **Focus Theme per DIC**
@@ -55,22 +55,22 @@ Pipeline menghasilkan berbagai analisis otomatis, antara lain:
 * **Activity Count by Weight per Month & Automated Busyness per Month Detection**
 
 How does it work?
-* Setiap analisis dihitung melalui custom JavaScript di dalam node **Code**, menggunakan logic agregasi, grouping, dan counting yang kompleks.
-* Analisis pada data yang memuat **big data dalam bentuk teks** seperti analisis aktivitas yang duplikat antardepartemen dan klasifikasi QCDSME dilakukan menggunakan **model ChatGPT** melalui **node OpenAI** 
+* Each analysis is calculated through custom JavaScript inside **Code** nodes, using complex aggregation, grouping, and counting logic.
+* Analyses on data containing **large volumes of text data**, such as detecting duplicate activities across departments and QCDSME classification, are performed using a **ChatGPT model** via an **OpenAI node**.
 
 ### 5. **Automatic Chart Generation (QuickChart API)**
 
-Workflow secara otomatis membangun:
+The workflow automatically builds:
 
 * Pie charts,
 * Bar charts (Activities & Initiatives per DIC),
 * Support contribution distribution charts.
 
-Semua chart dibuat secara dinamis melalui **QuickChart** dengan konfigurasi otomatis termasuk label, warna departemen, datalabels plugin, dan scaling.
+All charts are generated dynamically through **QuickChart**, with automatic configuration including labels, department colors, the datalabels plugin, and scaling.
 
 ### 6. **HTML Report Composer**
 
-Beberapa node seperti:
+Several nodes such as:
 
 * `Container of E.2.1`,
 * `Container of F3`,
@@ -80,21 +80,20 @@ Beberapa node seperti:
 * `Node J.2`,
 * `Merge All Analyses`
 
-… bekerja sama menghasilkan **laporan HTML lengkap** yang berisi tabel dan chart siap kirim.
+… work together to generate a **complete HTML report** containing tables and charts ready to be sent.
 
 ### 7. **Email Delivery Automation**
 
-Hasil akhir dikirim otomatis via Gmail:
+The final result is sent automatically via Gmail:
 
 * Subject: *tes automated activity plan*
-* Body: full HTML report dengan seluruh analisis.
+* Body: full HTML report containing all analyses.
 
 ---
 
 ## 🧩 **Workflow Architecture (High-Level)**
 
-Berikut alur kerja yang direkonstruksi dari file JSON:
-
+Below is the workflow reconstructed from the JSON file:
 
 ```
 1. Manual Trigger
@@ -123,7 +122,7 @@ Berikut alur kerja yang direkonstruksi dari file JSON:
 
 ## 🏗️ **Technical Stack**
 
-| Komponen                          | Teknologi                  |
+| Component                         | Technology                  |
 | --------------------------------- | -------------------------- |
 | Workflow Orchestrator             | **n8n**                    |
 | Data Source                       | **Google Sheets API**      |
@@ -137,43 +136,43 @@ Berikut alur kerja yang direkonstruksi dari file JSON:
 
 ## 📊 **Sample Output (Summary of Insights)**
 
-Workflow menghasilkan otomatis:
+The workflow automatically generates:
 
-* chart jumlah activities & initiatives per department,
-* distribusi tema dominan,
-* perbandingan KSI vs KMI,
-* hubungan kolaborasi antar departemen,
-* kebutuhan support lintas departemen,
-* distribusi alokasi budget CAPEX vs Dept vs Not Use Budget.
-* deteksi otomatis aktivitas yang duplikat antardepartemen
-* klasifikasi QCDSME otomatis dari setiap activity plan
-* breakdown aktivitas berdasarkan bobot dan kategori serta jumlah bobot per bulan yang kemudian dituliskan laporan bulan tersibuk dan bulan yang paling tidak sibuk
+* charts of the number of activities & initiatives per department,
+* distribution of dominant themes,
+* comparison of KSI vs KMI,
+* collaboration relationships between departments,
+* cross-department support needs,
+* budget allocation distribution across CAPEX vs Department vs Not Use Budget.
+* automatic detection of duplicated activities across departments
+* automatic QCDSME classification for each activity plan
+* activity breakdown by weight and category, as well as total weight per month, which is then used to report the busiest month and the least busy month
 
-Semua diagram dan tabel langsung dikirim via email tanpa editing manual.
+All charts and tables are sent directly via email without any manual editing.
 
 ---
 
 ## 🤖 **Why This Automation Matters**
 
-Sebelum otomatisasi, proses analisis Activity Plan untuk 8–10 departemen memakan:
+Before automation, the Activity Plan analysis process for 8–10 departments took:
 
-* ≥ **8 jam kerja**
-* Risiko tinggi human error
-* Konsistensi laporan sulit dijaga
+* ≥ **8 hours of work**
+* High risk of human error
+* Difficulty maintaining report consistency
 
-Dengan pipeline ini, waktu pemrosesan turun menjadi:
+With this pipeline, processing time has dropped to:
 
-### **3–5 menit → seluruh laporan lengkap siap dikirim**
+### **3–5 minutes → a complete, ready-to-send report**
 
-Tidak ada lagi merging manual, editing chart, atau copy-paste.
+No more manual merging, chart editing, or copy-pasting.
 
 ---
 
 ## 📩 **How to Run**
 
-1. Buka workflow di n8n.
-2. Klik **Execute Workflow**.
-3. Laporan lengkap otomatis dikirim ke email tujuan.
+1. Open the workflow in n8n.
+2. Click **Execute Workflow**.
+3. The complete report is automatically sent to the destination email.
 
 ---
 
@@ -195,5 +194,5 @@ Tidak ada lagi merging manual, editing chart, atau copy-paste.
 
 ## 🙌 Acknowledgements
 
-Pipeline ini dibangun dengan tujuan membantu tim manajemen dan departemen terkait dalam menyusun Activity Plan yang lebih konsisten, cepat, dan akurat.
-Kontributor: Departemen Manufacturing, Development and Planning yang Mengembangkan Workflow & Tim Panitia Annual Plan 2026 yang memberikan masukan selama pengembangan — PT Kalbe Morinaga Indonesia.
+This pipeline was built with the aim of helping the management team and related departments compile the Activity Plan more consistently, quickly, and accurately.
+Contributors: the Manufacturing, Development and Planning Department that developed the workflow, and the Annual Plan 2026 Committee Team who provided input during development — PT Kalbe Morinaga Indonesia.
